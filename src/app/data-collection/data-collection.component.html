@@ -1,29 +1,28 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="text-center">Enter Patient Details</h1>
-<form>
+          <h1 class="text-center">Enter Patient Details</h1>
     <div class="form-group">
       <label for="First-Name">First Name</label>
-      <input type="text" class="form-control" id="first-name" placeholder="First Name">
+      <input type="text" class="form-control" id="first-name" [(ngModel)]="patient.first_name" placeholder="First Name" >
     </div>
     <div class="form-group">
         <label for="Last-Name">Last Name</label>
-        <input type="text" class="form-control" id="last-name" placeholder="Last Name">
+        <input type="text" class="form-control" id="last-name" [(ngModel)]="patient.last_name" placeholder="Last Name">
     </div>
     <div class="form-group">
         <label for="State">State</label>
-        <input type="text" class="form-control" id="state" placeholder="State">
+        <input type="text" class="form-control" id="state" [(ngModel)]="patient.state" placeholder="State">
     </div>
     <div class="form-group">
         <label for="City">City</label>
-        <input type="text" class="form-control" id="city" placeholder="City">
+        <input type="text" class="form-control" id="city" [(ngModel)]="patient.city" placeholder="City">
     </div>
     <div class="form-group">
         <label for="Contact No.">Contact No.</label>
-        <input type="text" class="form-control" id="contact" placeholder="Contact No.">
+        <input type="text" class="form-control" id="contact" [(ngModel)]="patient.contactno" placeholder="Contact No.">
     </div>
-  </form>
+    <button class="btn btn-warning" (click)="collectPatientDetails()">Submit</button>
 </div>
 </div>
 </div>
