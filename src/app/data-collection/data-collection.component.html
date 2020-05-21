@@ -1,28 +1,38 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-          <h1 class="text-center">Enter Patient Details</h1>
-    <div class="form-group">
-      <label for="First-Name">First Name</label>
-      <input type="text" class="form-control" id="first-name" [(ngModel)]="patient.first_name" placeholder="First Name" >
-    </div>
-    <div class="form-group">
-        <label for="Last-Name">Last Name</label>
-        <input type="text" class="form-control" id="last-name" [(ngModel)]="patient.last_name" placeholder="Last Name">
-    </div>
-    <div class="form-group">
-        <label for="State">State</label>
-        <input type="text" class="form-control" id="state" [(ngModel)]="patient.state" placeholder="State">
-    </div>
-    <div class="form-group">
-        <label for="City">City</label>
-        <input type="text" class="form-control" id="city" [(ngModel)]="patient.city" placeholder="City">
-    </div>
-    <div class="form-group">
-        <label for="Contact No.">Contact No.</label>
-        <input type="text" class="form-control" id="contact" [(ngModel)]="patient.contactno" placeholder="Contact No.">
-    </div>
-    <button class="btn btn-warning" (click)="collectPatientDetails()">Submit</button>
-</div>
-</div>
-</div>
+<h1>Patient Details</h1>
+<p>
+    <mat-form-field appearance="legacy">
+      <mat-label>First Name</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="patient.first_name">
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Last Name</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="patient.last_name">
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>State</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="patient.state">
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>City</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="patient.city">
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+      <mat-form-field appearance="legacy">
+      <mat-label>Contact No.</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="patient.contactno">
+      <mat-hint>Hint</mat-hint>
+    </mat-form-field>
+  </p>
+  <button mat-raised-button color="primary" (click)="collectPatientDetails()">Submit</button>
+
