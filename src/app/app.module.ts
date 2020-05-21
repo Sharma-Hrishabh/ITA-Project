@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DataCollectionComponent } from './data-collection/data-collection.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -25,7 +24,6 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     HomeComponent,
     DataCollectionComponent,
-    NavbarComponent
   ],
   imports: [
     BrowserModule,

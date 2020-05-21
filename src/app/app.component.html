@@ -13,6 +13,12 @@
 			<div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
 				<a mat-list-item routerLink="/">Home</a>
 				<a mat-list-item routerLink="/data-collection">Collect Data</a>
+				<div *ngIf="auth.user | async as user; else showLogin">
+					<a mat-list-item (click)="logout()">Logout</a>
+			  	</div>
+				<ng-template #showLogin>
+					<a mat-list-item (click)="login()">Login with Google</a>
+				</ng-template>
 				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
 					<span class="full-width" *ngIf="isExpanded || isShowing">Guidelines</span>
 					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
@@ -32,20 +38,3 @@
   </div>
 
 </mat-sidenav-container>
-
-
- 
-
-
-<!-- 
-<div class="container">
-    <div *ngIf="auth.user | async as user; else showLogin">
-        <h1>Hello {{ user.displayName }}!</h1>
-        <button (click)="logout()">Logout</button>
-      </div>
-      <ng-template #showLogin>
-        <p>Please login.</p>
-        <button (click)="login()">Login with Google</button>
-      </ng-template>
-</div>
- -->
