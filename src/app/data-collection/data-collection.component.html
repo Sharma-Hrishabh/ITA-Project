@@ -3,36 +3,48 @@
     <mat-form-field appearance="legacy">
       <mat-label>First Name</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="patient.first_name">
-      <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Last Name</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="patient.last_name">
-      <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>State</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="patient.state">
-      <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>City</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="patient.city">
-      <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
   <p>
       <mat-form-field appearance="legacy">
       <mat-label>Contact No.</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="patient.contactno">
-      <mat-hint>Hint</mat-hint>
     </mat-form-field>
   </p>
+  <p>
+    <mat-radio-group aria-label="COVID-19 Infected">
+      <mat-label>Contamination Status</mat-label><br><br>
+      <mat-radio-button value="yes">Yes</mat-radio-button><br>
+      <mat-radio-button value="no">No</mat-radio-button>
+    </mat-radio-group>
+  </p>
+    <p>
+      <mat-form-field appearance="legacy">
+        <mat-label>Contamination Reason</mat-label>
+        <mat-select disableRipple>
+          <mat-option value="1">Travelled Abroad</mat-option>
+          <mat-option value="2">Travelled Within The Country</mat-option>
+          <mat-option value="3">Community Transmission</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
   <button mat-raised-button color="primary" (click)="collectPatientDetails()">Submit</button>
 
