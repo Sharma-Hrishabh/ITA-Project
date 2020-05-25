@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../patient';
+// import { } from '@angular/fire'
 
 @Component({
   selector: 'app-data-collection',
@@ -12,13 +13,14 @@ export class DataCollectionComponent implements OnInit {
     id:0,
     first_name:"",
     last_name:"",
+    age_group:"",
     state:"",
     city:"",
     contactno:""
   };
 
   collectPatientDetails() {
-    console.log(this.patient.first_name);
+    console.log(this.patient);
   }
  
   constructor() { }

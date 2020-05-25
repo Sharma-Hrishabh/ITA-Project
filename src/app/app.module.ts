@@ -8,7 +8,7 @@ import { DataCollectionComponent } from './data-collection/data-collection.compo
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule  } from  '@angular/material/toolbar';
@@ -18,6 +18,10 @@ import { MatListModule } from  '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
 
 
 @NgModule({
@@ -25,6 +29,9 @@ import { MatRadioModule } from '@angular/material/radio';
     AppComponent,
     HomeComponent,
     DataCollectionComponent,
+    LineChartComponent,
+    BarChartComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +49,8 @@ import { MatRadioModule } from '@angular/material/radio';
     MatIconModule,
     MatInputModule,
     MatSelectModule,
-    MatRadioModule
+    MatRadioModule,
+    MDBBootstrapModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

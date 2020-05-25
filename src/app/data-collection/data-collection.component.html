@@ -1,5 +1,6 @@
-<h1>Patient Details</h1>
-<p>
+<div class="container">
+  <h1>Patient Details</h1>
+  <p>
     <mat-form-field appearance="legacy">
       <mat-label>First Name</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="patient.first_name">
@@ -9,6 +10,17 @@
     <mat-form-field appearance="legacy">
       <mat-label>Last Name</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="patient.last_name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Age Group</mat-label>
+      <mat-select disableRipple>
+        <mat-option value="1">1 - 18</mat-option>
+        <mat-option value="2">18 - 40</mat-option>
+        <mat-option value="3">40 - 60</mat-option>
+        <mat-option value="3">60+</mat-option>
+      </mat-select>
     </mat-form-field>
   </p>
   <p>
@@ -36,15 +48,15 @@
       <mat-radio-button value="no">No</mat-radio-button>
     </mat-radio-group>
   </p>
-    <p>
-      <mat-form-field appearance="legacy">
-        <mat-label>Contamination Reason</mat-label>
-        <mat-select disableRipple>
-          <mat-option value="1">Travelled Abroad</mat-option>
-          <mat-option value="2">Travelled Within The Country</mat-option>
-          <mat-option value="3">Community Transmission</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Contamination Reason</mat-label>
+      <mat-select disableRipple>
+        <mat-option value="1">Travelled Abroad</mat-option>
+        <mat-option value="2">Travelled Within The Country</mat-option>
+        <mat-option value="3">Community Transmission</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
   <button mat-raised-button color="primary" (click)="collectPatientDetails()">Submit</button>
-
+</div>
