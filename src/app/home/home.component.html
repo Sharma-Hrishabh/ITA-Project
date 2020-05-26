@@ -1,13 +1,11 @@
-<div class="graph-container">
-    <div class="row">
-        <div class="col-lg-4">
-            <app-line-chart></app-line-chart>
-        </div>
-        <div class="col-lg-4">
-            <app-bar-chart></app-bar-chart>
-        </div>
-        <div class="col-lg-4">
-            <app-pie-chart></app-pie-chart>
-        </div>
-    </div>
-</div>
+<mat-grid-list cols="3" rows="1">
+    <mat-grid-tile >
+        <app-line-chart></app-line-chart>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-bar-chart></app-bar-chart>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-pie-chart></app-pie-chart>
+    </mat-grid-tile>
+</mat-grid-list>
