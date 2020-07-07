@@ -18,6 +18,7 @@ import { MatListModule } from  '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { HighlightsComponent } from './highlights/highlights.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MatRadioModule } from '@angular/material/radio';
     AppComponent,
     HomeComponent,
     DataCollectionComponent,
+    HighlightsComponent,
   ],
   imports: [
     BrowserModule,
