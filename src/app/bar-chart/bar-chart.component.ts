@@ -42,9 +42,14 @@ export class BarChartComponent {
   ];
 
   constructor(public firestore: AngularFirestore, public auth: AngularFireAuth, public datePipe: DatePipe) {
+    // this.date = this.datePipe.transform(new Date(Date.now() - 12096e5), 'MM-dd-yyyy');
+    // this.country = "India";
+    // this.getStats();
+    setInterval(()=>{
     this.date = this.datePipe.transform(new Date(Date.now() - 12096e5), 'MM-dd-yyyy');
     this.country = "India";
     this.getStats();
+    },10000);
   }
 
   public chartOptions: any = {
@@ -68,5 +73,6 @@ export class BarChartComponent {
     });
     console.log(this.chartLabels);
     console.log(this.chartDatasets);
+    console.log("ascasc");
   }
 }
