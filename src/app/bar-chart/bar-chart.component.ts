@@ -65,14 +65,11 @@ export class BarChartComponent {
       console.log('No matching documents.');
       return;
     }
-
+    this.chartDatasets[0].data = [];
+    this.chartLabels = [];
     snapshot.forEach(doc => {
-      console.log(doc.id, '=>', doc.data());
       this.chartLabels.push(doc.id);
-      this.chartDatasets[0].data.push(doc.data["active"]);
+      this.chartDatasets[0].data.push(doc.data()["active"]);
     });
-    console.log(this.chartLabels);
-    console.log(this.chartDatasets);
-    console.log("ascasc");
   }
 }
