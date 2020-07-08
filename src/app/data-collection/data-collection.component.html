@@ -15,11 +15,11 @@
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Age Group</mat-label>
-      <mat-select disableRipple>
-        <mat-option value="1">1 - 18</mat-option>
-        <mat-option value="2">18 - 40</mat-option>
-        <mat-option value="3">40 - 60</mat-option>
-        <mat-option value="3">60+</mat-option>
+      <mat-select disableRipple [(ngModel)]="patient.age_group">
+        <mat-option value="18">1 - 18</mat-option>
+        <mat-option value="40">18 - 40</mat-option>
+        <mat-option value="60">40 - 60</mat-option>
+        <mat-option value="150">60+</mat-option>
       </mat-select>
     </mat-form-field>
   </p>
@@ -44,14 +44,14 @@
   <p>
     <mat-radio-group aria-label="COVID-19 Infected">
       <mat-label>Contamination Status</mat-label><br><br>
-      <mat-radio-button value="yes">Yes</mat-radio-button><br>
-      <mat-radio-button value="no">No</mat-radio-button>
+      <mat-radio-button value="yes" [(ngModel)]="patient.contamination_status">Yes</mat-radio-button><br>
+      <mat-radio-button value="no" [(ngModel)]="patient.contamination_status">No</mat-radio-button>
     </mat-radio-group>
   </p>
   <p>
     <mat-form-field appearance="legacy">
       <mat-label>Contamination Reason</mat-label>
-      <mat-select disableRipple>
+      <mat-select disableRipple [(ngModel)]="patient.contamination_reason">
         <mat-option value="1">Travelled Abroad</mat-option>
         <mat-option value="2">Travelled Within The Country</mat-option>
         <mat-option value="3">Community Transmission</mat-option>
