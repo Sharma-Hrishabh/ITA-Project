@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { DatePipe } from '@angular/common';
+import { BarserviceService } from './../barservice.service';
 
 @Component({
   selector: 'app-bar-chart',
@@ -41,32 +39,21 @@ export class BarChartComponent {
     }
   ];
 
-  constructor(public firestore: AngularFirestore, public auth: AngularFireAuth, public datePipe: DatePipe) {
-    this.date = this.datePipe.transform(new Date(Date.now() - 12096e5), 'MM-dd-yyyy');
-    this.country = "India";
-    this.getStats();
+  constructor(private barser: BarserviceService) {
   }
 
+  
   public chartOptions: any = {
     responsive: true
   };
   public chartClicked(e: any): void { }
   public chartHovered(e: any): void { }
 
-  private async getStats(): Promise<any> {
-    const countryRef = this.firestore.collection('country_stats/'+this.date+"/"+this.country+"/");
-    const snapshot = await countryRef.ref.get();
-    if (snapshot.empty) {
-      console.log('No matching documents.');
-      return;
-    }
 
-    snapshot.forEach(doc => {
-      console.log(doc.id, '=>', doc.data());
-      this.chartLabels.push(doc.id);
-      this.chartDatasets[0].data.push(doc.data["active"]);
-    });
-    console.log(this.chartLabels);
-    console.log(this.chartDatasets);
+  async ngOnInit() {
+    var obj  = await this.barser.getStats()
+
+    console.log("InsideInit");
+    console.log(obj);
   }
 }
