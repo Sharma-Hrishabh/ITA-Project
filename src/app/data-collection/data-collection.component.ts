@@ -24,13 +24,14 @@ export class DataCollectionComponent implements OnInit {
   };
 
   public async collectPatientDetails(): Promise<any> {
-    console.log(this.patient);
+    // console.log(this.patient);
     var user = await this.auth.currentUser
     if (!user) 
       return alert("Please 'Login with Google' to submit");
     this.patient.id = await user.uid
-    console.log(this.patient);
-    //firestore.
+
+    var docRef = this.firestore.doc("patient_detail/"+this.patient.id+"/")
+    await docRef.set(this.patient);
   }
  
   constructor(public firestore: AngularFirestore, public auth: AngularFireAuth) { }
