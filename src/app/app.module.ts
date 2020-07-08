@@ -23,6 +23,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import {MatGridListModule} from '@angular/material/grid-list'; 
+import {DatePipe} from '@angular/common';
 
 
 @NgModule({
@@ -54,7 +55,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MDBBootstrapModule.forRoot(),
     MatGridListModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
