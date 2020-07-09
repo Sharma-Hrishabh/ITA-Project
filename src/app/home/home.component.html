@@ -13,7 +13,7 @@
         <p>
             <mat-form-field appearance="legacy">
                 <mat-label>Search Here</mat-label>
-                <mat-select>
+                <mat-select disableRipple [(ngModel)]="reason">
                 <mat-option value="Travelled Abroad">Travelled Abroad</mat-option>
                 <mat-option value="Travelled Within The Country">Travelled Within The Country</mat-option>
                 <mat-option value="Community Transmission">Community Transmission</mat-option>
