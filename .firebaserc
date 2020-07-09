@@ -6,6 +6,13 @@
           "covid-19-app-9f4c8"
         ]
       }
+    },
+    "covid-19-ea3cc": {
+      "hosting": {
+        "covid19app": [
+          "covid-19-ea3cc"
+        ]
+      }
     }
   }
 }

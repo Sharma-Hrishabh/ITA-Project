@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Patient } from '../patient';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+// import { } from '@angular/fire'
 
 @Component({
   selector: 'app-data-collection',
@@ -9,19 +12,29 @@ import { Patient } from '../patient';
 export class DataCollectionComponent implements OnInit {
 
   patient : Patient = {
-    id:0,
+    id:"",
     first_name:"",
     last_name:"",
+    age_group:"",
     state:"",
     city:"",
-    contactno:""
+    contactno:"",
+    contamination_status: false,
+    contamination_reason: ""
   };
 
-  collectPatientDetails() {
-    console.log(this.patient.first_name);
+  public async collectPatientDetails(): Promise<any> {
+    // console.log(this.patient);
+    var user = await this.auth.currentUser
+    if (!user) 
+      return alert("Please 'Login with Google' to submit");
+    this.patient.id = await user.uid
+
+    var docRef = this.firestore.doc("patient_detail/"+this.patient.id+"/")
+    await docRef.set(this.patient);
   }
  
-  constructor() { }
+  constructor(public firestore: AngularFirestore, public auth: AngularFireAuth) { }
 
   ngOnInit(): void {
   }

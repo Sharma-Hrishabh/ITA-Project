@@ -1,7 +1,11 @@
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-         <h1 class="text-center">COVID-19 DashBoard</h1>
-</div>
-</div>
-</div> -->
+<mat-grid-list cols="3" rows="1">
+    <mat-grid-tile >
+        <app-line-chart></app-line-chart>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-bar-chart></app-bar-chart>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <app-pie-chart></app-pie-chart>
+    </mat-grid-tile>
+</mat-grid-list>

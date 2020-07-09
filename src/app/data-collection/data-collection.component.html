@@ -1,5 +1,6 @@
-<h1>Patient Details</h1>
-<p>
+<div class="container">
+  <h1>Patient Details</h1>
+  <p>
     <mat-form-field appearance="legacy">
       <mat-label>First Name</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="patient.first_name">
@@ -9,6 +10,17 @@
     <mat-form-field appearance="legacy">
       <mat-label>Last Name</mat-label>
       <input matInput placeholder="Placeholder" [(ngModel)]="patient.last_name">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Age Group</mat-label>
+      <mat-select disableRipple [(ngModel)]="patient.age_group">
+        <mat-option value="18">1 - 18</mat-option>
+        <mat-option value="40">18 - 40</mat-option>
+        <mat-option value="60">40 - 60</mat-option>
+        <mat-option value="150">60+</mat-option>
+      </mat-select>
     </mat-form-field>
   </p>
   <p>
@@ -32,19 +44,19 @@
   <p>
     <mat-radio-group aria-label="COVID-19 Infected">
       <mat-label>Contamination Status</mat-label><br><br>
-      <mat-radio-button value="yes">Yes</mat-radio-button><br>
-      <mat-radio-button value="no">No</mat-radio-button>
+      <mat-radio-button value="true" [(ngModel)]="patient.contamination_status">Yes</mat-radio-button><br>
+      <mat-radio-button value="false" [(ngModel)]="patient.contamination_status">No</mat-radio-button>
     </mat-radio-group>
   </p>
-    <p>
-      <mat-form-field appearance="legacy">
-        <mat-label>Contamination Reason</mat-label>
-        <mat-select disableRipple>
-          <mat-option value="1">Travelled Abroad</mat-option>
-          <mat-option value="2">Travelled Within The Country</mat-option>
-          <mat-option value="3">Community Transmission</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </p>
+  <p>
+    <mat-form-field appearance="legacy">
+      <mat-label>Contamination Reason</mat-label>
+      <mat-select disableRipple [(ngModel)]="patient.contamination_reason">
+        <mat-option value="Travelled Abroad">Travelled Abroad</mat-option>
+        <mat-option value="Travelled Within The Country">Travelled Within The Country</mat-option>
+        <mat-option value="Community Transmission">Community Transmission</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </p>
   <button mat-raised-button color="primary" (click)="collectPatientDetails()">Submit</button>
-
+</div>
