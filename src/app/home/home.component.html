@@ -5,7 +5,30 @@
     <mat-grid-tile>
         <app-bar-chart></app-bar-chart>
     </mat-grid-tile>
-    <mat-grid-tile>
+    <!-- <mat-grid-tile>
         <app-pie-chart></app-pie-chart>
+    </mat-grid-tile> -->
+    <mat-grid-tile>
+        <div class="container">
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Search Here</mat-label>
+                <mat-select disableRipple [(ngModel)]="reason">
+                <mat-option value="Travelled Abroad">Travelled Abroad</mat-option>
+                <mat-option value="Travelled Within The Country">Travelled Within The Country</mat-option>
+                <mat-option value="Community Transmission">Community Transmission</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="legacy">
+                <mat-label>Search Result</mat-label>
+                <input matInput placeholder="Placeholder" disabled> 
+            </mat-form-field>
+        </p>
+        <button mat-raised-button color="primary" (click)="searchQuery()">Search</button>
+
+    </div>
     </mat-grid-tile>
+
 </mat-grid-list>
