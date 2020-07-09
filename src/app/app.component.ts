@@ -6,7 +6,12 @@ import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
 import { MatSidenav } from '@angular/material/sidenav';
-
+import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionPanel } from '@angular/material/expansion';
+import { MatExpansionPanelTitle } from '@angular/material/expansion';
+import { MatExpansionPanelDescription } from '@angular/material/expansion';
+import { MatExpansionPanelHeader } from '@angular/material/expansion';
+import { MatAccordion } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-root',

@@ -18,6 +18,8 @@ import { MatListModule } from  '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+
+import { HighlightsComponent } from './highlights/highlights.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
@@ -31,6 +33,7 @@ import {DatePipe} from '@angular/common';
     AppComponent,
     HomeComponent,
     DataCollectionComponent,
+    HighlightsComponent,
     LineChartComponent,
     BarChartComponent,
     PieChartComponent,

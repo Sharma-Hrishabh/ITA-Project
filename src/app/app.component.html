@@ -19,14 +19,7 @@
 				<ng-template #showLogin>
 					<a mat-list-item (click)="login()">Login with Google</a>
 				</ng-template>
-				<mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
-					<span class="full-width" *ngIf="isExpanded || isShowing">Guidelines</span>
-					<mat-icon class="menu-button" [ngClass]="{'rotated' : showSubSubMenu}" *ngIf="isExpanded || isShowing">expand_more</mat-icon>
-				</mat-list-item>
-				<div class="submenu" [ngClass]="{'expanded' : showSubSubMenu}" *ngIf="isShowing || isExpanded">
-					<mat-list-item>Symptoms</mat-list-item>
-					<mat-list-item>Precautions</mat-list-item>
-				</div>
+				<a mat-list-item routerLink="/highlights">Highlights</a>
 			</div>
 		</mat-nav-list>
     <mat-nav-list>
