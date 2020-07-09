@@ -9,6 +9,7 @@
         <app-pie-chart></app-pie-chart>
     </mat-grid-tile> -->
     <mat-grid-tile>
+        <div class="container">
         <p>
             <mat-form-field appearance="legacy">
                 <mat-label>Search Here</mat-label>
@@ -25,5 +26,9 @@
                 <input matInput placeholder="Placeholder" disabled> 
             </mat-form-field>
         </p>
+        <button mat-raised-button color="primary" (click)="searchQuery()">Search</button>
+
+    </div>
     </mat-grid-tile>
+
 </mat-grid-list>
